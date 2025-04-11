@@ -4,7 +4,7 @@
     "containerDefinitions": [
       {
         "name": "tejas-container",
-        "image": "010928197218.dkr.ecr.ca-central-1.amazonaws.com/pal-ecr",
+        "image": "010928197218.dkr.ecr.ca-central-1.amazonaws.com/tejas-ecr",
         "essential": true,
         "portMappings": [
           {

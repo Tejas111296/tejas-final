@@ -8,7 +8,6 @@ ip_address = socket.gethostbyname(hostname)
 @app.route('/')
 def hello_cloud():
     return 'Welcome to Tondase Final Test API Server'
-
 @app.route('/host')
 def host_name():
     return hostname
