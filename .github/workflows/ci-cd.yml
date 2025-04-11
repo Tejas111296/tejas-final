@@ -29,8 +29,8 @@ jobs:
     # Build and push Docker image
     - name: Build and push Docker image
       env:
-        ECR_REGISTRY: 600627364901.dkr.ecr.ca-central-1.amazonaws.com
-        ECR_REPOSITORY: pal-ecr
+        ECR_REGISTRY: 010928197218.dkr.ecr.ca-central-1.amazonaws.com
+        ECR_REPOSITORY: tejas-ecr
         IMAGE_TAG: latest
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
@@ -49,8 +49,8 @@ jobs:
             --task-definition inft1210-task \
             --desired-count 2 \
             --launch-type FARGATE \
-            --network-configuration "awsvpcConfiguration={subnets=[subnet-0bbb6c5eca170528a,subnet-06f71e5993d0234b3],securityGroups=[sg-0869b4181940a526b],assignPublicIp=DISABLED}" \
-            --load-balancers "targetGroupArn=arn:aws:elasticloadbalancing:ca-central-1:600627364901:targetgroup/pal-PalALBTa-KRYP8YDZVY5H/5835464097f4aeac,containerName=pal-container,containerPort=5000" \
+            --network-configuration "awsvpcConfiguration={subnets=[subnet-077accba901dd57fd,subnet-0d02dbe7ddbf1aeec],securityGroups=[sg-06cdc48366d158583],assignPublicIp=DISABLED}" \
+            --load-balancers "targetGroupArn=arn:aws:elasticloadbalancing:ca-central-1:010928197218:targetgroup/appsta-Tejas-ZI4AP9TRK4UA/0b919349b90b9335,containerName=tejas-container,containerPort=5000" \
             --region ca-central-1
         else
           echo "Service pal-final-service already exists, proceeding with deployment."
