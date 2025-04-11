@@ -18,4 +18,4 @@ def host_ip():
 
 # Do not run app directly if using gunicorn
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5000)

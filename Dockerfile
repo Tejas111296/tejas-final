@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY app.py .
 
 # Run the app with Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
+CMD ["python", "gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
